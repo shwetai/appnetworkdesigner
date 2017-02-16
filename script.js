@@ -1,3 +1,4 @@
+function loadD3() {
 var linkpath = ("links.csv");
 var nodepath = ("nodes.csv");
 
@@ -90,7 +91,6 @@ var tooltip = d3.select("body")
 	.style("z-index", "10")
 	.style("visibility", "hidden");
 
-
  //put in little circles to drag
   node.append("circle")
       .attr("r", 4.5)
@@ -105,13 +105,15 @@ var tooltip = d3.select("body")
       .attr("height", 100)
       .on("mouseover", function(){return tooltip.style("visibility", "visible") + tooltip.text("a simple tooltip");})
       .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-      .on("mouseout", function(){return tooltip.style("visibility", "hidden");});;
+      .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
+      .on("click", function(){return tooltip.style("visibility", "visible") + tooltip.text("a complex tooltip");});;
 
 //add the words
  node.append("text")
       .attr("dx", 12)
       .attr("dy", ".35em")
       .text(function(d) { return d.name });
+
 
 
 //var zoom = d3.behavior.zoom()
@@ -146,3 +148,10 @@ var tooltip = d3.select("body")
 
   });
   });
+  }
+
+function unloadD3() {
+        delete window.foo;
+        delete window.cleanup;
+        alert("cleanedup. typeof window.foo is " + (typeof window.foo));
+}

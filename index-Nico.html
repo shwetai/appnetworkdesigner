@@ -8,35 +8,38 @@
   <meta name="description" content="Application Network Designer Thing">
   <script src="https://d3js.org/d3.v3.js"></script>
   <link href="style.css" rel="stylesheet">
+  <script src="JSFX_ImageZoom.js"></script>
 
 </head>
 
-<body>
+<body onload="draw();">
   <!-- <script src="js/scripts.js"></script>  -->
 
   <canvas id="experience" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#D4E6F1 "></canvas>
+  <img id="source" src="api-02.png" border="0" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+
 
   <canvas id="process" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#5DADE2"></canvas>
 
   <canvas id="system" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#2874A6"></canvas>
   <script>
 
-    var canvas = document.getElementById('experience'),
-context = canvas.getContext('2d');
 
-make_base();
+function draw() {
+  var canvas = document.getElementById('experience');
+  var ctx = canvas.getContext('2d');
 
-function make_base()
-{
-  base_image = new Image();
-  base_image.src = 'api-02.png';
-  base_image.onload = function(){
-    context.drawImage(base_image, 400, 75);
-  }
+  // Draw slice
+  ctx.drawImage(document.getElementById('source'), 400, 75);
+
 }
 
   </script>
-  <a class="example-image-link" href="images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="images/thumb-1.jpg" alt="Girl looking out people on beach"></a>
+
+  <div id="thumbwrap">
+    <script src="script.js"></script>
+    <a class="thumb" href="#"><img src="api-02.png" alt="" onMouseOver="loadD3()" onMouseOut="unloadD3()"><span><img src="api-02.png" alt="" width="125" height="125"><img src="api-02.png" alt="" width="125" height="125"></span></a>
+  </div>
 
 </body>
 </html>
