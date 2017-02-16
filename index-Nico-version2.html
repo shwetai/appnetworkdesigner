@@ -54,85 +54,18 @@
 <img id="database" src="images/database.png" border="0" style="position: absolute; hight:100px; width:100px; top: 550px; left: 700px; ">
 
 
+<script src="wz_jsgraphics.js" type="text/javascript"></script>
 
-  <script>
+ <script>
 
-
-//var userLayer = document.getElementById('user'),
-//layer4 = userLayer.getContext('2d');
-//var experienceLayer = document.getElementById('experience'),
-//layer3 = experienceLayer.getContext('2d');
-//var processLayer = document.getElementById('process'),
-//layer2 = processLayer.getContext('2d');
-//var systemLayer = document.getElementById('system'),
-//layer1 = systemLayer.getContext('2d');
-//var externalLayer = document.getElementById('external'),
-//layer0 = externalLayer.getContext('2d');
-
-
-make_base();
-
-function make_base()
-{
-  ups_image = new Image();
-  app_image = new Image();
-  customer_image = new Image();
-  database_image = new Image();
-
-  webpage_image = new Image();
-  mobile_image = new Image();
-  user_image = new Image();
-  mid_image = new Image();
-
-
-  webpage_image.src = 'images/app-no-text.png';  
-  mobile_image.src = 'images/app-no-text.png';    
-  user_image.src = 'images/app-no-text.png';  
-
-  mid_image.src = 'images/app-no-text.png';
-  app_image.src = 'images/app.png';
-  customer_image.src = 'images/app-customers.png';
-  database_image.src = 'images/database.png';  
-  ups_image.src = 'images/ups.png';  
+ 	setStroke(10); 
+ 	setColor("#000000"); 
+	drawLine(0,0,470,200);
 
 
 
+ </script>
 
-
-
-  webpage_image.onload = function(){
-    layer4.drawImage(webpage_image, 100, 0, 100, 100);
-  }
-
-  mobile_image.onload = function(){
-    layer3.drawImage(mobile_image, 100, 25, 100, 100);
-  }
-
-  user_image.onload = function(){
-    layer3.drawImage(user_image, 400, 25, 100, 100);
-  }
-
-  mid_image.onload = function(){
-    layer2.drawImage(mid_image, 100, 25, 100, 100);
-  }
-
-  
-  customer_image.onload = function(){
-    layer1.drawImage(customer_image, 400, 25, 100, 100);
-  }
-  
-  app_image.onload = function(){
-    layer1.drawImage(app_image, 100, 25, 100, 100);
-  }
-  
-  database_image.onload = function(){
-    layer0.drawImage(database_image, 400, 25, 100, 100);
-  }
-
-  ups_image.onload = function(){
-    layer0.drawImage(ups_image, 100, 25, 100, 100);
-  }
-}
-
-  </script>
+</body>
+</html>
  
