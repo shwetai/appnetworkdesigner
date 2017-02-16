@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 
 <html lang="en">
@@ -16,10 +14,29 @@
 <body>
   <!-- <script src="js/scripts.js"></script>  -->
 
-  <canvas id="experience" width="800" height="200" style="border:1px solid #000000; display:block; background-color:#ccd9ff "></canvas>
+  <canvas id="experience" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#D4E6F1 "></canvas>
 
-  <canvas id="process" width="800" height="200" style="border:1px solid #000000; display:block; background-color:#809fff"></canvas>
+  <canvas id="process" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#5DADE2"></canvas>
 
-  <canvas id="system" width="800" height="200" style="border:1px solid #000000; display:block; background-color:#3366ff"></canvas>
+  <canvas id="system" width="1000" height="225" style="border:1px solid #000000; display:block; background-color:#2874A6"></canvas>
+  <script>
+
+    var canvas = document.getElementById('experience'),
+context = canvas.getContext('2d');
+
+make_base();
+
+function make_base()
+{
+  base_image = new Image();
+  base_image.src = 'api-02.png';
+  base_image.onload = function(){
+    context.drawImage(base_image, 400, 75);
+  }
+}
+
+  </script>
+  <a class="example-image-link" href="images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="images/thumb-1.jpg" alt="Girl looking out people on beach"></a>
+
 </body>
 </html>
