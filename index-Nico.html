@@ -21,6 +21,8 @@
   <script src="wz_jsgraphics.js" type="text/javascript"></script>
 
   <script>
+  var imageCounter = 1;
+
   function allowDrop(ev) {
       ev.preventDefault();
   }
@@ -32,7 +34,25 @@
   function drop(ev) {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("text");
+      //document.getElementById(data).style.height = null;
       ev.target.appendChild(document.getElementById(data));
+
+      // create new div
+      var newImg = document.createElement('img');
+      imageCounter += 1;
+      var imgName = 'app' + imageCounter;
+      newImg.id = imgName;
+      newImg.setAttribute("src", "images/app_shipment.png");
+      newImg.setAttribute("border","0") ;
+      newImg.setAttribute("height","114");
+      newImg.setAttribute("width","72");
+      newImg.setAttribute("onMouseOver","JSFX.zoomIn(this)");
+      newImg.setAttribute("onMouseOut","JSFX.zoomOut(this)");
+      newImg.setAttribute("draggable","true");
+      newImg.setAttribute("ondragstart","drag(event)");
+
+      document.getElementsByTagName('canvas')[0].appendChild(newImg);
+
   }
   </script>
 
