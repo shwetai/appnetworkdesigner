@@ -110,7 +110,7 @@
 }
 
 .thumb span {
-	position:absolute;
+	position:relative;
 	visibility:hidden;
 }
 .thumb:hover, .thumb:hover span {
