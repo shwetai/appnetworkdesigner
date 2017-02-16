@@ -115,6 +115,6 @@
 }
 .thumb:hover, .thumb:hover span {
 	visibility:visible;
-	top:0; left:125px;
-	z-index:1;
+	top:100; left:400px;
+	z-index:100;
 }
