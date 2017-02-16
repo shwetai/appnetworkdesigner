@@ -2,17 +2,39 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
 
-  <title>Application Network Designer Thing</title>
+
+  <meta charset="utf-8">
   <meta name="description" content="Application Network Designer Thing">
-  <script src="https://d3js.org/d3.v3.js"></script>
   <link href="style.css" rel="stylesheet">
+  <title>Application Network Designer Thing</title>
+
+  <script src="https://d3js.org/d3.v3.js"></script>
+
+  <script type="text/javascript">
+    var href= "index-Nico.html"
+  </script>
+
+
 
   <script src="JSFX_ImageZoom.js"></script>
   <script src="wz_jsgraphics.js" type="text/javascript"></script>
 
+  <script>
+  function allowDrop(ev) {
+      ev.preventDefault();
+  }
 
+  function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+  }
+  </script>
 
 </head>
 
@@ -20,54 +42,45 @@
 <body>
 
 
+<!--
+Background dropable
+-->
+<div id="experienceAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; border-style: solid; border-width: 1px; border-color: #000000; z-index: 1;">
+<!-- <img id="background" src="images/background.png" border="0" style=" width:1000px; position: absolute; z-index: 1;"> -->
+</div>
 
-<div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)">
-<img id="background" src="images/background.png" border="0" style=" width:1000px; position: absolute;"  >
-<div/>
+<div id="processAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; border-style: solid; border-width: 1px; border-color: #000000; z-index: 1;">
 
-<img id="user" src="images/app_shipment.png" border="0" style="position: absolute;  top: 0px; left: 1000px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" draggable="true" ondragstart="drag(event)">
+</div>
 
+<div id="systemAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; border-style: solid; border-width: 1px; border-color: #000000; z-index: 1;">
 
-<img id="ups" src="images/app_shipment.png" border="0" style="position: absolute; top: 140px; left: 700px;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
-
-
-<img id="ups" src="images/app_shipment.png" border="0" style="position: absolute;  top: 140px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+</div>
 
 
-<div id="thumbwrap">
+
+<div id="canvas" ondrop="drop(event);" ondragover="allowDrop(event);" style="position: absolute;  top: 0px; left: 1000px; z-index: 1; height: 114px; width: 72px; border-width: 1px; border-color: #000000; border-style: solid;">
+  <img id="user" src="images/app_shipment.png" border="0" height="114" width="72" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" draggable="true" ondragstart="drag(event)">
+</div>
+
+<!-- <img id="ups" src="images/app_shipment.png" border="0" style="position: absolute; top: 140px; left: 700px;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
+
+
+<!-- <img id="ups" src="images/app_shipment.png" border="0" style="position: absolute;  top: 140px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
+
+
+<!-- <div id="thumbwrap" style="z-index: 10;">
     <a class="thumb" href="#"><img src="images/app_shipment.png" alt="" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" style="top: 275px ; left: 450px ; position: absolute" ><span><img src="images/popover.png" alt=""   ></span></a>
-  </div>
+</div> -->
 
 
-<img id="app-customers" src="images/app-customers.png" border="0" style="position: absolute;  top:430px; left: 700px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+<!-- <img id="app-customers" src="images/app-customers.png" border="0" style="position: absolute;  top:430px; left: 700px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
 
 
-<img id="ups_app" src="images/app_shipment.png" border="0" style="position: absolute; top: 430px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+<!-- <img id="ups_app" src="images/app_shipment.png" border="0" style="position: absolute; top: 430px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
 
-<img id="ups" src="images/ups.png" border="0" style="position: absolute;  top: 570px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+<!-- <img id="ups" src="images/ups.png" border="0" style="position: absolute;  top: 570px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
 
-<img id="database" src="images/database.png" border="0" style="position: absolute; top: 570px; left: 700px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
-
-
-
-
-
-<script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-</script>
 
 </body>
 </html>
- 
