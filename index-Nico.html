@@ -21,18 +21,41 @@
   <script src="wz_jsgraphics.js" type="text/javascript"></script>
 
   <script>
+  var onLayers = "false";
+
   function allowDrop(ev) {
       ev.preventDefault();
   }
 
   function drag(ev) {
       ev.dataTransfer.setData("text", ev.target.id);
+
+      if(ev.screenX > 1000 )
+      {
+        onLayers = "true";
+      }
+      else
+      {
+        onLayers = "false";
+      }
+      
+      
   }
 
   function drop(ev) {
       ev.preventDefault();
       var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data).cloneNode("true"));
+
+
+      if (onLayers=="false")
+      {
+        ev.target.appendChild(document.getElementById(data));
+      }
+      else
+      {
+        ev.target.appendChild(document.getElementById(data).cloneNode(true));
+      }
+      console.log(onLayers);
   }
   </script>
 
@@ -60,7 +83,7 @@ Background dropable
 
 
 <div id="canvas" ondrop="drop(event);" ondragover="allowDrop(event);" style="position: absolute;  top: 0px; left: 1000px; z-index: 1; height: 114px; width: 275px; border-width: 1px; border-color: #000000; border-style: solid;">
-  <img id="user" src="images/app_shipment.png" border="0" height="114" width="72" hspace="100" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)">
+  <img id="iconImage" src="images/app_shipment.png" border="0" height="114" width="72" hspace="100" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)">
 </div>
 
 <!-- <img id="ups" src="images/app_shipment.png" border="0" style="position: absolute; top: 140px; left: 700px;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
