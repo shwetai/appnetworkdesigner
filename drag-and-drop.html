@@ -57,6 +57,37 @@
       }
       console.log(onLayers);
   }
+
+
+  //MODAL stuff
+
+      // Get the modal
+    var mymodal = document.getElementById("detailsDialog");
+
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal 
+    
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        mymodal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            mymodal.style.display = "none";
+        }
+    }
+
+  function openModal(ev)
+  {
+    mymodal.style.display = "block";
+  }
+
   </script>
 
 </head>
@@ -69,31 +100,63 @@
 Background dropable
 -->
 
-<img id="background" src="images/background.png" border="0" style=" width:805px ;height:351; position: absolute; z-index: -1;">
+<img id="background" src="images/Artboard2.png" border="0" style=" width:1000px ; position: absolute; z-index: -1;">
 
-<div id="external" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 85px; z-index: 1;"
+
+<div id="space-filler" style="width: 1000px; height: 140px; z-index: 1;"
 ></div>
 
-<div id="experienceAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; z-index: 1;">
+
+<div id="external" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 1000px; height: 110px; z-index: 1;"
+></div>
+
+<div id="experienceAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 1000px; height: 150px; z-index: 1;">
+</div>
+
+<div id="processAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 1000px; height: 150px; z-index: 1;">
+</div>
+
+<div id="systemAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 1000px; height: 150px; z-index: 1;">
+</div>
+
+
+
+<div id="palette" ondrop="drop(event);" ondragover="allowDrop(event);" style="position: absolute;  top: 50px; left: 1100px; z-index: 1; height: 300px; width: 275px; border-width: 1px; border-color: #000000; border-style: solid;">
+
+  <img id="palette-background" src="images/palette.png" border="0" style=" width:275px ; position: absolute; z-index: -1;"/>
+
+  <div id="space-filler"  style="height: 60px; " ></div>
+
+  
+
+
+  <img id="appIcon" src="images/application-02.png" border="0" style="margin-top:15px" height="90" width="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
+
+
+  <img id="dbIcon" src="images/database.png" border="0" style="margin-top:15px" height="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
+
+  <img id="monitorIcon" src="images/monitor.png" border="0" style="margin-top:15px" height="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
+
+  <img id="phoneIcon" src="images/phone.png" border="0" style="margin-top:15px" height="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
+
+  <img id="httpIcon" src="images/http.png" border="0" style="margin-top:15px" height="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
+
+  <img id="soapIcon" src="images/soap.png" border="0" style="margin-top:15px" height="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
 
 </div>
 
-<div id="processAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; z-index: 1;">
+
+
+<!-- The Modal -->
+<div id="detailsDialog" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
 
 </div>
-
-<div id="systemAPI" ondrop="drop(event);" ondragover="allowDrop(event);" style="width: 805px; height: 117px; z-index: 1;">
-
-</div>
-
-
-
-<div id="canvas" ondrop="drop(event);" ondragover="allowDrop(event);" style="position: absolute;  top: 0px; left: 1000px; z-index: 1; height: 300px; width: 275px; border-width: 1px; border-color: #000000; border-style: solid;">
-  <div id="label"  style="text-align:right; " > Drag Application to layers </div>
-
-  <img id="iconImage" src="images/application-02.png" border="0" style="margin-top:15px" height="90" width="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)">
-</div>
-
 <!-- <img id="ups" src="images/app_shipment.png" border="0" style="position: absolute; top: 140px; left: 700px;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"> -->
 
 
