@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Application Network Designer Thing</title>
+  <meta name="description" content="Application Network Designer Thing">
+  <script src="https://d3js.org/d3.v3.js"></script>
+  <link href="style.css" rel="stylesheet">
+
+  <script src="JSFX_ImageZoom.js"></script>
+  <script src="wz_jsgraphics.js" type="text/javascript"></script>
+
+
+</head>
+
+
+<body>
+
+
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+
+</script>
+
+
+<div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img id="background" src="images/Artboard2.png" border="0" style=" width:1000px; position: absolute;">
+</div>
+
+<div id="ups_1"><img src="images/application-02.png" border="0" style="position: absolute; top: 280px; left: 700px;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"></div>
+
+<div id="ups_2"><img src="images/application-02.png" border="0" style="position: absolute;  top: 280px; left: 200px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"/></div>
+
+<div id="processLayer"><img src="images/application-02.png" alt="" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" style="top: 440px ; left: 450px ; position: absolute" ></div>
+
+<div id="thumbwrap">
+  <a class="thumb" href="#"><img src="images/application-02.png" alt="" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" style="position: absolute;  top:580px; left: 700px; "> <span><img src="images/popover.png" alt="" style="position: absolute;  top:370px; left: 200px; "></span></a>
+</div>
+
+
+<div id="thumbwrap">
+  <script src="script.js"></script>
+  <a class="thumb" href="#"><img id="ups_app" src="images/application-02-text.png" border="0" style="position: absolute; top: 580px; left: 200px;" alt="" onMouseOver="loadD3()"></a>
+</div>
+
+<img id="ups" src="images/ups.png" border="0" style="position: absolute;  top: 730px; left: 200px; " alt="" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+
+<img id="database1" src="images/database.png" border="0" style="position: absolute; top: 730px; left: 720px; " onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)"/>
+
+
+
+</body>
+</html>
