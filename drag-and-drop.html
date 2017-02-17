@@ -122,7 +122,13 @@ Background dropable
 
 
 <div id="palette" ondrop="drop(event);" ondragover="allowDrop(event);" style="position: absolute;  top: 50px; left: 1100px; z-index: 1; height: 300px; width: 275px; border-width: 1px; border-color: #000000; border-style: solid;">
-  <div id="label"  style="text-align:right; " > Drag Application to layers </div>
+
+  <img id="palette-background" src="images/palette.png" border="0" style=" width:275px ; position: absolute; z-index: -1;"/>
+
+  <div id="space-filler"  style="height: 60px; " ></div>
+
+  
+
 
   <img id="appIcon" src="images/application-02.png" border="0" style="margin-top:15px" height="90" width="72" hspace="80" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)" onmousedown="JSFX.zoomOut(this)" onmouseup="JSFX.zoomIn(this)" draggable="true" ondragstart="drag(event)" onclick="openModal()"/>
 
