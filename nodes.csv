@@ -1,8 +1,7 @@
 node,group,img_location
-celery,group1,api-02.png
-peanut butter,group3,api-02.png
-hummus,group1,application-02.png
-banana,group2,api_straight.png
-honey,group1,application-02.png
-ranch dressing,group1,api_straight.png
-pizza,group1,database-02.png
+API,group1,images/api.png
+Http,group3,images/http.png
+DB,group1,images/database.png
+SOAP,group2,images/soap.png
+OUTPUT,group1,images/xml.png
+Mongo,group1,images/mongo.png
