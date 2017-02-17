@@ -18,7 +18,7 @@ var svg = d3.select("body").append("svg")
   //using width/height from above, but size is mainly det'd by linkDistance and charge
     .size([width, height])
     // how far between nodes
-    .linkDistance(400)
+    .linkDistance(250)
     // changes how close nodes will get to each other. Neg is farther apart.
     .charge(-400);
 
@@ -76,7 +76,7 @@ var tooltip = d3.select("body")
 	.style("position", "absolute")
 	.style("z-index", "10")
 	.style("visibility", "hidden")
-	.text("a simple tooltip");
+	.text("");
 
   // Create the node circles.
   var node = svg.selectAll(".node")
@@ -103,10 +103,10 @@ var tooltip = d3.select("body")
       .attr("y", -8)
       .attr("width", 100)
       .attr("height", 100)
-      .on("mouseover", function(){return tooltip.style("visibility", "visible") + tooltip.text("a simple tooltip");})
+      .on("mouseover", function(){return tooltip.style("visibility", "visible") + tooltip.text("");})
       .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
       .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
-      .on("click", function(){return tooltip.style("visibility", "visible") + tooltip.text("a complex tooltip");});;
+      .on("click", function(){return tooltip.style("visibility", "visible") + tooltip.text("");});;
 
 //add the words
  node.append("text")

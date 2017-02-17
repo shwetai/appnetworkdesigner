@@ -21,7 +21,7 @@
 }
 
 .node.group2{
-  fill: red;
+  fill: 00A3E0;
   stroke-opacity: .3;
   stroke-width: 4;
 }
@@ -45,7 +45,7 @@
 }
 
 .link.type2{
-  stroke: red;
+  stroke: 00A3E0;
   stroke-opacity: .3;
   stroke-width: 4;
 }
