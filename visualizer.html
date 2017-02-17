@@ -38,8 +38,8 @@ function drop(ev) {
 </script>
 
 
-<div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <img id="background" src="images/Artboard2.png" border="0" style=" width:1000px; position: absolute;">
+<div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
+  <img id="background" src="images/Artboard2.png" border="0" style=" width:1000px; position: absolute;" onMouseOver="JSFX.zoomIn(this)" onMouseOut="JSFX.zoomOut(this)">
 </div>
 
 <div id="mob"><img src="images/phone.png" border="0" style="position: absolute; top: 160px; left: 200px;"></div>
